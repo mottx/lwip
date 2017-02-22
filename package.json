@@ -6,7 +6,7 @@
     "async": "^2.0.0-rc.5",
     "bindings": "^1.2.1",
     "decree": "0.0.6",
-    "nan": "^2.3.2"
+    "nan": "^2.5.1"
   },
   "scripts": {
     "install": "node-gyp rebuild",
@@ -61,10 +61,12 @@
     "contain",
     "cover"
   ],
-  "contributors": [{
-    "name": "Pavel Pokorny",
-    "email": "<pajkycz@gmail.com>"
-  }],
+  "contributors": [
+    {
+      "name": "Pavel Pokorny",
+      "email": "<pajkycz@gmail.com>"
+    }
+  ],
   "author": "Eyal Arubas <eyalarubas@gmail.com>",
   "license": "MIT",
   "bugs": {
