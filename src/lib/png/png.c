@@ -671,6 +671,16 @@ png_init_io(png_structrp png_ptr, png_FILE_p fp)
 }
 #  endif
 
+/* Copied from pngwutil.c */
+void PNGAPI
+png_save_uint_32_m(png_bytep buf, png_uint_32 i)
+{
+   buf[0] = (png_byte)((i >> 24) & 0xffU);
+   buf[1] = (png_byte)((i >> 16) & 0xffU);
+   buf[2] = (png_byte)((i >>  8) & 0xffU);
+   buf[3] = (png_byte)( i        & 0xffU);
+}
+
 #  ifdef PNG_SAVE_INT_32_SUPPORTED
 /* PNG signed integers are saved in 32-bit 2's complement format.  ANSI C-90
  * defines a cast of a signed integer to an unsigned integer either to preserve
@@ -685,7 +695,7 @@ png_init_io(png_structrp png_ptr, png_FILE_p fp)
 void PNGAPI
 png_save_int_32(png_bytep buf, png_int_32 i)
 {
-   png_save_uint_32(buf, (png_uint_32)i);
+   png_save_uint_32_m(buf, (png_uint_32)i);
 }
 #  endif
 
